@@ -117,7 +117,7 @@ if btn == True:
         st.write(" ")
         st.empty()
         st.write(f"""
-                 \tOleh :\n
+                 \tDikembangkan oleh :\n
                  Andi Hasan A\n
                  *LF PCNU Ngawi*\n
                  \n
