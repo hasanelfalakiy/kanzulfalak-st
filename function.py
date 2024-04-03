@@ -14,9 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with kanzulfalak-st.  If not, see <https://www.gnu.org/licenses/>.
  *
- """
+"""
  
- def toCounter2(decimal):
+def toCounter2(decimal):
     time = abs(int(decimal))
     minute = int((abs(decimal) - time) * 60)
     second = round((((abs(decimal) - time) * 60) - minute) * 60, 2)
@@ -47,7 +47,7 @@ def toTime2(decimal):
     minute = int((abs(decimal) - degree) * 60)
     second = round((((abs(decimal) - degree) * 60) - minute) * 60, 2)
     
-    if decimal < 0:
+    if decimal < 0.0:
         degree = f"-{degree:02d}"
     else:
         degree = f"{degree:02d}"

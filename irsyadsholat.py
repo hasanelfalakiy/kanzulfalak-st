@@ -14,9 +14,10 @@
  * You should have received a copy of the GNU General Public License
  * along with kanzulfalak-st.  If not, see <https://www.gnu.org/licenses/>.
  *
- """
+"""
 
 import math
+from operator import mod
 
 class IrsyadSholat:
 	
@@ -184,20 +185,20 @@ class IrsyadSholat:
 
 		# roshdul Qiblat
 		B = 90 - Lintang
-		PR = math.degrees(math.atan(1 / (math.cos(math.radians(B)) * math.tan(math.radians(self.P)))))
+		PR = math.degrees(math.atan(1.0 / (math.cos(math.radians(B)) * math.tan(math.radians(self.P)))))
 		CA = math.degrees(math.acos(math.tan(math.radians(self.Dek)) * math.tan(math.radians(B)) * math.cos(math.radians(PR))))
 
 		# roshdul Qiblat 1 WIS
-		self.Rq1 = (-(PR + CA) / 15 + 12) % 24
+		self.Rq1 = mod(-(PR + CA) / 15 + 12, 24.0)
 
 		# roshdul Qiblat 1 WD
-		self.Rq = self.Rq1 - self.e - (Bujur - (timeZ * 15)) / 15
+		self.Rq = mod(self.Rq1 - self.e - (Bujur - (timeZ * 15)) / 15, 24.0)
 
 		# roshdul Qiblat 2 WIS
-		self.RQ = -(PR - CA) / 15 + 12
+		self.RQ = mod(-(PR - CA) / 15 + 12, 24.0)
 
 		# toshdul Qiblat 2 WD
-		self.RW = self.RQ - self.e -(Bujur - (timeZ * 15)) / 15
+		self.RW = mod(self.RQ - self.e - (Bujur - (timeZ * 15)) / 15, 24.0)
 
 		# mengetahui jarak antara 2 tempat
 		selisih = Bujur - BK

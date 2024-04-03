@@ -14,11 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with kanzulfalak-st.  If not, see <https://www.gnu.org/licenses/>.
  *
- """
- 
+"""
+
 import streamlit as st
 from irsyadsholat import IrsyadSholat
-from function import *
+from function import*
 
 st.title("Kanzul Falak")
 st.write("versi : 0.1")
